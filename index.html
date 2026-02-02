@@ -3,370 +3,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Ciğerci Mustafa Afyon | Uydukent Akarçay Lezzet Noktası</title>
-    <meta name="description" content="Afyonkarahisar Uydukent Akarçay'da, Selçuklu Mahallesi'nin lezzet durağı. Meşhur Urfa ciğeri, zırh kebap ve zengin serpme lezzetler Ciğerci Mustafa'da. Rezervasyon: 0272 229 10 80">
-    <meta name="keywords" content="afyon ciğerci, ciğerci mustafa uydukent, akarçay restoran, selçuklu mahallesi yemek, afyon kebap, mustafa garipcin">
-    <meta name="author" content="Ciğerci Mustafa">
-    <meta name="robots" content="index, follow">
-    
-    <meta property="og:title" content="Ciğerci Mustafa | Afyonkarahisar Akarçay">
-    <meta property="og:description" content="Selçuklu Mah. Cahardudayev Cad. üzerinde eşsiz kebap ve ciğer keyfi.">
-    <meta property="og:image" content="foto2.JPG">
-    <meta property="og:type" content="restaurant">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <title>Ciğerci Mustafa | Dijital Menü</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* --- CSS DEĞİŞKENLERİ (Soft & Modern Palet) --- */
         :root {
-            --primary-accent: #C06C54;   /* Sıcak Kiremit */
-            --secondary-accent: #8A9A5B; /* Yumuşak Adaçayı */
-            --bg-cream: #FAFAF5;         /* Kırık Beyaz */
-            --text-dark: #333333;        /* Antrasit */
-            --text-light: #777777;       /* Gri */
-            --white: #FFFFFF;
-            --whatsapp-green: #25D366;
-            --soft-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            --border-radius: 16px;
+            --bg-color: #fcfaf7;
+            --card-bg: #ffffff;
+            --text-main: #332d29;
+            --accent: #a67c52;
+            --soft-gray: #f0ede9;
+            --radius: 16px;
         }
 
-        /* --- GENEL AYARLAR --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-cream);
-            color: var(--text-dark);
-            line-height: 1.7;
-            overflow-x: hidden;
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+
+        header { 
+            position: relative; height: 220px; 
+            background: url('img/masa.jpg') center/cover;
+            display: flex; align-items: flex-end; padding: 20px;
+        }
+        header::after { 
+            content: ''; position: absolute; inset: 0; 
+            background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, transparent 70%); 
+        }
+        .header-content { position: relative; z-index: 1; color: white; }
+        .header-content h1 { font-size: 1.5rem; font-weight: 600; }
+        .header-content p { font-size: 0.9rem; opacity: 0.9; }
+
+        .container { padding: 20px; max-width: 600px; margin: 0 auto; }
+
+        /* Kategori Navigasyonu */
+        .nav-scroller {
+            overflow-x: auto; display: flex; gap: 10px; padding: 5px 0 20px 0;
+            scrollbar-width: none; position: sticky; top: 0; background: var(--bg-color); z-index: 10;
+        }
+        .nav-scroller::-webkit-scrollbar { display: none; }
+        .nav-link { 
+            white-space: nowrap; padding: 8px 18px; background: var(--card-bg);
+            border-radius: 20px; font-size: 0.85rem; text-decoration: none;
+            color: var(--text-main); border: 1px solid var(--soft-gray); font-weight: 500;
+        }
+        .nav-link.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .info-card { 
+            background: #fff4e6; padding: 12px; border-radius: var(--radius); 
+            font-size: 0.8rem; margin-bottom: 25px; border-left: 4px solid var(--accent);
         }
 
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; }
-        
-        /* --- WHATSAPP BUTONU --- */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 90px;
-            right: 20px;
-            background-color: var(--whatsapp-green);
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px #999;
-            z-index: 3000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
-        }
-        .whatsapp-float:hover { transform: scale(1.1); background-color: #128C7E; }
+        section { margin-bottom: 35px; }
+        h2 { font-size: 1.2rem; margin-bottom: 15px; border-left: 3px solid var(--accent); padding-left: 10px; }
 
-        /* --- HEADER --- */
-        header {
-            position: fixed;
-            top: 0; left: 0; width: 100%;
-            padding: 1.5rem 0; z-index: 1000;
-            transition: all 0.4s ease;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
-        }
-        header.scrolled {
-            background: rgba(250, 250, 245, 0.98);
-            padding: 1rem 0;
-            box-shadow: var(--soft-shadow);
-        }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
-        nav { display: flex; justify-content: space-between; align-items: center; }
-        
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--white); font-family: 'Playfair Display', serif; }
-        header.scrolled .logo { color: var(--primary-accent); }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
 
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { color: var(--white); text-decoration: none; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
-        header.scrolled .nav-links a { color: var(--text-dark); }
-        .hamburger { display: none; color: var(--white); font-size: 1.8rem; cursor: pointer; }
-        header.scrolled .hamburger { color: var(--text-dark); }
+        .menu-item { 
+            background: var(--card-bg); border-radius: var(--radius); overflow: hidden;
+            display: flex; box-shadow: 0 4px 12px rgba(0,0,0,0.03); border: 1px solid var(--soft-gray);
+        }
+        .item-img { 
+            width: 110px; height: 110px; flex-shrink: 0;
+            background-color: var(--soft-gray);
+            object-fit: cover; aspect-ratio: 1/1;
+        }
+        .item-details { padding: 12px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .item-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+        .item-desc { font-size: 0.75rem; color: #777; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .item-price { font-weight: 600; color: var(--accent); font-size: 1rem; margin-top: 8px; }
 
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-        }
-        .hero-bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('foto2.JPG');
-            background-size: cover;
-            background-position: center;
-            filter: brightness(0.5);
-        }
-        .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 20px; }
-        .hero h1 { font-size: 4rem; margin-bottom: 1rem; }
-        .btn-hero {
-            padding: 15px 40px; background-color: var(--primary-accent);
-            color: var(--white); text-decoration: none; border-radius: 50px;
-            font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
-            transition: 0.3s; display: inline-block;
-        }
+        .no-img-item { padding: 15px; border-bottom: 1px solid var(--soft-gray); display: flex; justify-content: space-between; align-items: center;}
+        .no-img-item:last-child { border-bottom: none; }
 
-        /* --- HİKAYEMİZ --- */
-        section { padding: 6rem 0; }
-        .story-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        
-        .story-images { position: relative; height: 500px; }
-        .story-img-1 {
-            position: absolute; top: 0; left: 0; width: 75%; height: auto;
-            border-radius: var(--border-radius); box-shadow: var(--soft-shadow);
-            z-index: 1;
-        }
-        .story-img-2 {
-            position: absolute; bottom: 0; right: 0; width: 60%; height: auto;
-            border-radius: var(--border-radius); border: 8px solid var(--white);
-            box-shadow: var(--soft-shadow); z-index: 2;
-        }
-        
-        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 0.5rem; }
-        .section-subtitle { text-align: center; color: var(--primary-accent); margin-bottom: 3rem; font-style: italic; }
-
-        /* --- MENÜ --- */
-        .menu-tabs { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
-        .tab-btn {
-            background: transparent; border: 1px solid #ddd; padding: 10px 25px;
-            border-radius: 30px; cursor: pointer; font-family: 'Montserrat', sans-serif;
-            color: var(--text-light); transition: 0.3s;
-        }
-        .tab-btn.active, .tab-btn:hover { background: var(--primary-accent); color: var(--white); border-color: var(--primary-accent); }
-        
-        .menu-content { display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; animation: fadeIn 0.5s; }
-        .menu-content.active { display: grid; }
-        
-        .menu-card { background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--soft-shadow); display: flex; justify-content: space-between; }
-        .price { color: var(--primary-accent); font-weight: 700; font-family: 'Playfair Display', serif; font-size: 1.2rem; }
-
-        /* --- GALERİ GRID --- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-        .gallery-item { height: 300px; overflow: hidden; border-radius: var(--border-radius); position: relative; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .gallery-item:hover img { transform: scale(1.1); }
-        
-        .g-item-1 { grid-column: span 2; height: 400px; }
-
-        /* --- FOOTER & MAP --- */
-        footer { background-color: #222; color: #aaa; padding: 4rem 0 6rem 0; }
-        .map-container { width: 100%; height: 350px; margin-top: 2rem; border-radius: var(--border-radius); overflow: hidden; }
-        iframe { width: 100%; height: 100%; border: 0; }
-        
-        .contact-info-block { margin-bottom: 1.5rem; }
-        .contact-info-block strong { color: var(--white); display: block; margin-bottom: 5px; }
-        .contact-info-block a { color: #aaa; text-decoration: none; transition: 0.3s; }
-        .contact-info-block a:hover { color: var(--primary-accent); }
-
-        /* --- MOBİL STICKY BAR --- */
-        .mobile-action-bar {
-            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 400px; background: var(--white); padding: 10px;
-            border-radius: 50px; display: flex; justify-content: space-between;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2); z-index: 2000;
-        }
-        .action-btn { flex: 1; text-align: center; padding: 12px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-        .btn-call { background: var(--bg-cream); color: var(--text-dark); margin-right: 10px; }
-        .btn-map { background: var(--primary-accent); color: var(--white); }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .story-layout { grid-template-columns: 1fr; }
-            .story-images { height: 400px; margin-bottom: 2rem; }
-            .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-cream); flex-direction: column; padding: 2rem; }
-            .nav-links.active { display: flex; }
-            .nav-links a { color: var(--text-dark); }
-            .hamburger { display: block; }
-            .g-item-1 { height: 250px; } 
-            .gallery-grid { grid-template-columns: 1fr; }
-            .g-item-1 { grid-column: span 1; }
-        }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        footer { text-align: center; padding: 40px 0; font-size: 0.8rem; color: #aaa; }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/905326267546" class="whatsapp-float" target="_blank" title="Mustafa Bey ile İletişim">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+<header>
+    <div class="header-content">
+        <h1>Ciğerci Mustafa</h1>
+        <p>Afyonkarahisar'ın Meşhur Lezzet Durağı</p>
+    </div>
+</header>
 
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">CİĞERCİ MUSTAFA</div>
-                <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-                <ul class="nav-links">
-                    <li><a href="#hikayemiz">Hikayemiz</a></li>
-                    <li><a href="#menu">Menü</a></li>
-                    <li><a href="#galeri">Atmosfer</a></li>
-                    <li><a href="#iletisim">İletişim</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1>Ateşin Ustalığı,<br>Afyon'un Kalbinde.</h1>
-            <p style="margin-bottom: 2rem; font-size: 1.2rem;">Uydukent Akarçay kıyısında, Selçuklu Mahallesi'nin lezzet incisi.</p>
-            <a href="#menu" class="btn-hero">Menüyü İncele</a>
-        </div>
-    </section>
-
-    <section id="hikayemiz">
-        <div class="container">
-            <div class="story-layout">
-                <div class="story-images">
-                    <img src="sofra.JPG" alt="Ciğerci Mustafa Zengin İkramlı Sofra" class="story-img-1">
-                    <img src="foto.JPG" alt="Mutlu Müşterilerimiz" class="story-img-2">
-                </div>
-                <div class="story-content">
-                    <h2 class="section-title" style="text-align: left;">Köklerden Geleceğe</h2>
-                    <p style="color: var(--primary-accent); font-style: italic; margin-bottom: 1rem;">"Misafirimiz, Ailemizdir."</p>
-                    <p style="margin-bottom: 1rem;">Ciğerci Mustafa, sadece karın doyurulan bir yer değil; Afyonkarahisar <strong>Akarçay / Uydukent</strong> bölgesinde, kadim Güneydoğu mutfağının en seçkin temsilcisidir.</p>
-                    <p>Zengin ikramlarımız, dumanı üstünde kebaplarımız ve aile sıcaklığındaki ortamımızla sizi bekliyoruz. Görsellerde gördüğünüz o muhteşem sofra, bizim standartımızdır.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="menu" style="background-color: var(--white);">
-        <div class="container">
-            <h2 class="section-title">Lezzetlerimiz</h2>
-            <p class="section-subtitle">ÖZEL SEÇKİ</p>
-
-            <div class="menu-tabs">
-                <button class="tab-btn active" onclick="openMenu(event, 'Imza')">Spesiyaller</button>
-                <button class="tab-btn" onclick="openMenu(event, 'Kebap')">Kebaplar</button>
-                <button class="tab-btn" onclick="openMenu(event, 'Tatli')">Tatlılar</button>
-            </div>
-
-            <div id="Imza" class="menu-content active">
-                <div class="menu-card"><div><h4>Ciğer Şiş</h4><small>Özel baharatlı, taze kuzu ciğeri.</small></div><div class="price">600 ₺</div></div>
-                <div class="menu-card"><div><h4>Küşleme</h4><small>Kuzunun en değerli eti.</small></div><div class="price">850 ₺</div></div>
-            </div>
-            
-            <div id="Kebap" class="menu-content">
-                <div class="menu-card"><div><h4>Zırh Adana</h4><small>Elde zırhlanan gerçek kebap.</small></div><div class="price">600 ₺</div></div>
-                <div class="menu-card"><div><h4>Urfa Kebap</h4><small>Acısız, sade lezzet.</small></div><div class="price">600 ₺</div></div>
-            </div>
-
-            <div id="Tatli" class="menu-content">
-                <div class="menu-card"><div><h4>Künefe</h4><small>Hatay usulü, sıcak servis.</small></div><div class="price">220 ₺</div></div>
-                <div class="menu-card"><div><h4>Katmer</h4><small>Bol fıstıklı.</small></div><div class="price">250 ₺</div></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="galeri">
-        <div class="container">
-            <h2 class="section-title">Atmosfer</h2>
-            <p class="section-subtitle">SİZDEN KARELER</p>
-            <div class="gallery-grid">
-                <div class="gallery-item g-item-1">
-                    <img src="sofra.JPG" alt="Zengin Sofra Sunumu">
-                </div>
-                <div class="gallery-item">
-                    <img src="cigerci.JPG" alt="Ciğerci Mustafa Dış Mekan">
-                </div>
-                <div class="gallery-item">
-                    <img src="foto2.JPG" alt="Ocakbaşı Ateşi">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="iletisim">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <h2 style="color: var(--white); margin-bottom:1rem;">CİĞERCİ MUSTAFA</h2>
-                
-                <div class="contact-info-block">
-                    <strong><i class="fas fa-map-marker-alt" style="color:var(--primary-accent);"></i> ADRES</strong>
-                    <p>Selçuklu Mah. Cahardudayev Cad.<br>AKARÇAY / UYDUKENT, Afyonkarahisar</p>
-                </div>
-
-                <div class="contact-info-block">
-                    <strong><i class="fas fa-phone" style="color:var(--primary-accent);"></i> İLETİŞİM</strong>
-                    <a href="tel:02722291080">0272 229 10 80</a> <br>
-                    <a href="tel:05326267546">Mustafa Garipcin: 0532 626 75 46</a>
-                </div>
-
-                <div style="margin-top: 1.5rem;">
-                    <a href="#" style="color: #fff; margin: 0 10px; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-                    <a href="#" style="color: #fff; margin: 0 10px; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-            
-            <div class="map-container">
-                <iframe 
-                    src="https://maps.google.com/maps?q=38.776319643340315,30.53036062492198&hl=tr&z=15&output=embed" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-            
-            <p style="text-align: center; margin-top: 2rem; opacity: 0.5; font-size: 0.8rem;">© 2025 Ciğerci Mustafa. Tüm hakları saklıdır.</p>
-        </div>
-    </footer>
-
-    <div class="mobile-action-bar">
-        <a href="tel:02722291080" class="action-btn btn-call">
-            <i class="fas fa-phone-alt"></i> Hemen Ara
-        </a>
-        <a href="https://www.google.com/maps/dir//38.776319643340315,30.53036062492198" target="_blank" class="action-btn btn-map">
-            <i class="fas fa-location-arrow"></i> Yol Tarifi
-        </a>
+<div class="container">
+    <div class="nav-scroller">
+        <a href="#sisler" class="nav-link">Şiş Izgaralar</a>
+        <a href="#kebaplar" class="nav-link">Kebaplar</a>
+        <a href="#pideler" class="nav-link">Pide & Lahmacun</a>
+        <a href="#tatlilar" class="nav-link">Tatlılar</a>
+        <a href="#icecekler" class="nav-link">İçecekler</a>
     </div>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            header.classList.toggle('scrolled', window.scrollY > 50);
+    <div class="info-card">
+        🥗 <b>İkramlar:</b> Ana yemeklerin yanında Çiğ Köfte, Lahmacun, 11 çeşit meze, su ve çay ikramımızdır. Mezeler 2 defa yenilenebilir.
+    </div>
+
+    <section id="sisler">
+        <h2>Şiş Izgaralar</h2>
+        <div class="grid">
+            <div class="menu-item">
+                <img src="img/ciger-sis.jpg" alt="Ciğer Şiş" class="item-img">
+                <div class="item-details">
+                    <div>
+                        <div class="item-title">Ciğer Şiş</div>
+                        <p class="item-desc">Özel marine edilmiş yumuşak kuzu ciğeri.</p>
+                    </div>
+                    <div class="item-price">540 ₺</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/et-sis.jpg" alt="Et Şiş" class="item-img">
+                <div class="item-details">
+                    <div>
+                        <div class="item-title">Et Şiş</div>
+                        <p class="item-desc">Dinlendirilmiş dana kuşbaşı şiş.</p>
+                    </div>
+                    <div class="item-price">560 ₺</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/tavuk-sis.jpg" alt="Tavuk Şiş" class="item-img">
+                <div class="item-details">
+                    <div>
+                        <div class="item-title">Tavuk Şiş</div>
+                        <p class="item-desc">Özel soslu tavuk göğsü şiş.</p>
+                    </div>
+                    <div class="item-price">520 ₺</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/karisik-sis.jpg" alt="Karışık Şiş" class="item-img">
+                <div class="item-details">
+                    <div>
+                        <div class="item-title">Karışık Şiş</div>
+                        <p class="item-desc">4 Şiş Et, 4 Şiş Ciğer, 2 Şiş Tavuk.</p>
+                    </div>
+                    <div class="item-price">580 ₺</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/sucuk-sis.jpg" alt="Sucuk Şiş" class="item-img">
+                <div class="item-details">
+                    <div>
+                        <div class="item-title">Sucuk Şiş Izgara</div>
+                        <p class="item-desc">Afyon'un meşhur sucuğu ızgara ateşiyle.</p>
+                    </div>
+                    <div class="item-price">580 ₺</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kebaplar">
+        <h2>Kebaplar</h2>
+        <div class="grid">
+            <div class="menu-item">
+                <img src="img/adana-kebap.jpg" alt="Adana Kebap" class="item-img">
+                <div class="item-details">
+                    <div>
+                        <div class="item-title">Adana Kebap</div>
+                        <p class="item-desc">Zırh kıyması ile hazırlanan acılı kebap.</p>
+                    </div>
+                    <div class="item-price">560 ₺</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/urfa-kebap.jpg" alt="Urfa Kebap" class="item-img">
+                <div class="item-details">
+                    <div>
+                        <div class="item-title">Urfa Kebap</div>
+                        <p class="item-desc">Zırh kıyması ile hazırlanan acısız kebap.</p>
+                    </div>
+                    <div class="item-price">560 ₺</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/haşhaş-kebap.jpeg" alt="Haşhaş Kebap" class="item-img">
+                <div class="item-details">
+                    <div>
+                        <div class="item-title">Haşhaş Kebap</div>
+                        <p class="item-desc">Özel baharatlı ve sarımsaklı zırh kebabı.</p>
+                    </div>
+                    <div class="item-price">630 ₺</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/patlicanli-kebap.jpg" alt="Patlıcanlı Kebap" class="item-img">
+                <div class="item-details">
+                    <div>
+                        <div class="item-title">Patlıcanlı Kebap</div>
+                        <p class="item-desc">Mevsim patlıcanları ve özel kebap eti.</p>
+                    </div>
+                    <div class="item-price">630 ₺</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/tavuk-kanat.jpg" alt="Tavuk Kanat" class="item-img">
+                <div class="item-details">
+                    <div>
+                        <div class="item-title">Tavuk Kanat</div>
+                        <p class="item-desc">Soslu çıtır ızgara kanat.</p>
+                    </div>
+                    <div class="item-price">520 ₺</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pideler">
+        <h2>Pide & Lahmacun</h2>
+        <div class="grid">
+            <div class="menu-item">
+                <img src="img/lahmacun.jpg" alt="Lahmacun" class="item-img">
+                <div class="item-details">
+                    <div>
+                        <div class="item-title">Lahmacun (2 Adet)</div>
+                        <p class="item-desc">Çıtır taş fırın lahmacunu.</p>
+                    </div>
+                    <div class="item-price">350 ₺</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/karisik-pide.jpg" alt="Kuşbaşılı Pide" class="item-img">
+                <div class="item-details">
+                    <div>
+                        <div class="item-title">Pide Çeşitleri</div>
+                        <p class="item-desc">Kuşbaşılı, Kıymalı, Kaşarlı, Karışık veya Sucuklu.</p>
+                    </div>
+                    <div class="item-price">350 ₺</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tatlilar">
+        <h2>Tatlılar</h2>
+        <div class="card" style="background: white; border-radius: var(--radius); border: 1px solid var(--soft-gray);">
+            <div class="no-img-item"><span>Künefe</span> <b>250 ₺</b></div>
+            <div class="no-img-item"><span>Katmer</span> <b>280 ₺</b></div>
+            <div class="no-img-item"><span>Sütlaç</span> <b>120 ₺</b></div>
+            <div class="no-img-item"><span>Baklava</span> <b>250 ₺</b></div>
+        </div>
+    </section>
+
+    <section id="icecekler">
+        <h2>İçecekler</h2>
+        <div class="card" style="background: white; border-radius: var(--radius); border: 1px solid var(--soft-gray);">
+            <div class="no-img-item"><span>Kola / Fanta / Sprite</span> <b>60 ₺</b></div>
+            <div class="no-img-item"><span>Ayran / Şalgam</span> <b>40 ₺</b></div>
+            <div class="no-img-item"><span>Niğde Gazozu</span> <b>50 ₺</b></div>
+            <div class="no-img-item"><span>Soğuk Çay / Meyve Suyu</span> <b>60 ₺</b></div>
+            <div class="no-img-item"><span>Su</span> <b>25 ₺</b></div>
+            <div class="no-img-item"><span>Kahve / Nescafe</span> <b>70-110 ₺</b></div>
+            <div class="no-img-item"><span>Nargile Çeşitleri</span> <b>650 ₺</b></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Ciğerci Mustafa © 2026</p>
+        <p>Afyonkarahisar</p>
+        <br>
+        <div class="dev-branding">
+            <p>dijital çözüm ortağı</p>
+            <div class="dev-links">
+                <a href="https://inovitechh.github.io/webpage/" target="_blank">
+                    🌐 inovi tech
+                </a>
+                <a href="https://www.youtube.com/channel/UCPanzHFKR3F2mlL31Pg57Lg" target="_blank">
+                    📺 YouTube
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // Basit bir aktif menü takibi
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            links.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
         });
+    });
+</script>
 
-        function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        }
-
-        function openMenu(evt, menuName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("menu-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-                tabcontent[i].classList.remove("active");
-            }
-            tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(menuName).style.display = "grid";
-            setTimeout(() => document.getElementById(menuName).classList.add("active"), 10);
-            evt.currentTarget.className += " active";
-        }
-    </script>
 </body>
 </html>
